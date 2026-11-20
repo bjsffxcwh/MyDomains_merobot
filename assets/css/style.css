@@ -2444,12 +2444,8 @@ svg {
 .error-label {
   fill: var(--muted);
   font-family: var(--font-mono);
-  font-size: 7.5px;
-  letter-spacing: 1.3px;
-}
-
-.error-label--on-image {
-  fill: rgba(247, 238, 219, 0.7);
+  font-size: 8px;
+  letter-spacing: 1.2px;
 }
 
 .error-bot {
