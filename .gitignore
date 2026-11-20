@@ -8,3 +8,9 @@ desktop.ini
 
 # Logs
 *.log
+
+# Cloudflare local state
+.wrangler/
+node_modules/
+.env
+.dev.vars
