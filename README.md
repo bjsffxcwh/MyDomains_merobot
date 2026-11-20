@@ -2,7 +2,7 @@
 
 MEROBOT 的单页英文官网。视觉概念是 **“Field Station / 野外观察站”**：一页来自机器人实验室的田野笔记，暖纸、等高线、手绘感草甸与黄铜/铁锈色的线稿机器人，配硬朗清晰的现代技术排版。中央机器人保留完整的待命与悬停互动，左右四张 field note 对应 Research、Education、Projects、Solutions，底部是四个预留入口与联系方式通栏。
 
-当前状态：**v4 全原创手绘方向样稿，等待确认后部署。**
+当前状态：**已部署到 Cloudflare Pages（2026-11-21）。**`n`n- 线上地址：https://merobot.org`n- GitHub：https://github.com/bjsffxcwh/MyDomains_merobot`n- Cloudflare Pages 项目：`mydomains-merobot`（Production 分支 `main`）
 
 ## 本地预览
 
