@@ -76,7 +76,7 @@ python -m http.server 4173 --bind 127.0.0.1
 npx wrangler pages deploy . --project-name=merobot
 ```
 
-> `_headers`、`_redirects`、`404.html` 会被 Cloudflare Pages 自动识别。安全响应头包含 CSP，新增第三方脚本、分析或嵌入内容时需要同步调整 CSP。
+> `_headers`、`_redirects`、`404.html` 会被 Cloudflare Pages 自动识别。安全响应头包含 CSP，新增第三方脚本、分析或嵌入内容时需要同步调整 CSP。若 Cloudflare 的 Email Address Obfuscation、Rocket Loader 或 Web Analytics 会向页面注入脚本，上线前请关闭或把对应域名加入 CSP，否则联系邮箱可能无法正常显示/点击。
 
 ## 上线前检查
 
