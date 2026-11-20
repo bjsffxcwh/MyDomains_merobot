@@ -1,0 +1,21 @@
+{
+  "name": "MEROBOT",
+  "short_name": "MEROBOT",
+  "description": "An independent robotics lab for research, education, and applied systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f3ec",
+  "theme_color": "#f2f3ec",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

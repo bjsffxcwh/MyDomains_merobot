@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEROBOT — Robots with a human point of view</title>
+  <meta name="description" content="MEROBOT is an independent robotics lab working across research, education, projects, and applied solutions.">
+  <meta name="theme-color" content="#f2f3ec">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://merobot.org/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MEROBOT">
+  <meta property="og:title" content="MEROBOT — Robots with a human point of view">
+  <meta property="og:description" content="An independent robotics lab for research, education, and systems that leave the lab.">
+  <meta property="og:url" content="https://merobot.org/">
+  <meta property="og:image" content="https://merobot.org/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MEROBOT — a line-drawn robot on a warm paper background.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MEROBOT — Robots with a human point of view">
+  <meta name="twitter:description" content="An independent robotics lab for research, education, and systems that leave the lab.">
+  <meta name="twitter:image" content="https://merobot.org/assets/img/og-cover.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/fonts.css?v=20261121">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261121">
+  <script src="/assets/js/main.js?v=20261121" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MEROBOT — home">
+        <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+          <rect class="brand__head" x="5.5" y="10" width="25" height="20" rx="7"/>
+          <path class="brand__line" d="M18 10V4.5M14.5 4.5h7"/>
+          <circle class="brand__antenna" cx="18" cy="4.5" r="2.2"/>
+          <circle class="brand__eye" cx="13.5" cy="19.5" r="1.9"/>
+          <circle class="brand__eye" cx="22.5" cy="19.5" r="1.9"/>
+          <path class="brand__line" d="M14 25c2.4 1.7 5.6 1.7 8 0"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">MEROBOT</span>
+          <span class="brand__descriptor">Independent robotics lab</span>
+        </span>
+      </a>
+
+      <nav class="track-tabs" aria-label="Lab tracks">
+        <button class="track-tab" type="button" data-mood="research" aria-pressed="false">
+          <span class="track-tab__num">01</span><span>Research</span>
+        </button>
+        <button class="track-tab" type="button" data-mood="education" aria-pressed="false">
+          <span class="track-tab__num">02</span><span>Education</span>
+        </button>
+        <button class="track-tab" type="button" data-mood="projects" aria-pressed="false">
+          <span class="track-tab__num">03</span><span>Projects</span>
+        </button>
+        <button class="track-tab" type="button" data-mood="solutions" aria-pressed="false">
+          <span class="track-tab__num">04</span><span>Solutions</span>
+        </button>
+      </nav>
+
+      <div class="topbar__end">
+        <span class="availability"><span class="availability__dot" aria-hidden="true"></span>Open to collaborations</span>
+        <a class="contact-link" href="mailto:hello@merobot.org">
+          <span>Say hello</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M3.5 12.5 12.5 3.5M5.5 3.5h7v7"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <section class="stage" aria-labelledby="hero-title">
+        <div class="stage__meta" aria-hidden="true">
+          <span>MR—01 / LAB UNIT</span>
+          <span class="stage__state"><span class="stage__pulse"></span><span id="robot-state">IDLE / READY</span></span>
+        </div>
+
+        <div class="robot-stage" data-mood="idle">
+          <svg class="robot" data-mood="idle" viewBox="0 0 460 380" aria-hidden="true" focusable="false">
+            <g class="robot__ground">
+              <path class="hairline" d="M96 349h268"/>
+              <path class="hairline" d="M96 343v12M230 343v12M364 343v12"/>
+            </g>
+            <ellipse class="robot__shadow" cx="230" cy="349" rx="84" ry="5.5"/>
+
+            <g class="robot__float">
+              <g class="robot__wheels">
+                <path class="line" d="M201 292v11M259 292v11"/>
+                <circle class="shell" cx="197" cy="322" r="19"/>
+                <circle class="line thin" cx="197" cy="322" r="6.5"/>
+                <circle class="hub" cx="197" cy="322" r="2.2"/>
+                <circle class="shell" cx="263" cy="322" r="19"/>
+                <circle class="line thin" cx="263" cy="322" r="6.5"/>
+                <circle class="hub" cx="263" cy="322" r="2.2"/>
+              </g>
+
+              <g class="arm arm--left">
+                <path class="line" d="M176 226c-24 9-37 27-35 48"/>
+                <circle class="shell" cx="141" cy="283" r="9"/>
+              </g>
+              <g class="arm arm--right">
+                <path class="line" d="M284 226c24 9 37 27 35 48"/>
+                <circle class="shell hand" cx="319" cy="283" r="9"/>
+              </g>
+
+              <rect class="shell" x="216" y="184" width="28" height="20" rx="8"/>
+
+              <g class="robot__torso">
+                <rect class="shell" x="172" y="198" width="116" height="98" rx="30"/>
+                <circle class="line" cx="230" cy="230" r="10"/>
+                <circle class="port" cx="230" cy="230" r="3.2"/>
+                <text class="robot-id" x="230" y="264" text-anchor="middle">MR—01</text>
+                <path class="hairline" d="M218 279h24"/>
+              </g>
+
+              <g class="robot__head">
+                <g class="head-tilt">
+                  <g class="antenna">
+                    <path class="line" d="M230 96V66"/>
+                    <circle class="antenna__bulb" cx="230" cy="58" r="7"/>
+                  </g>
+
+                  <rect class="shell" x="162" y="94" width="136" height="100" rx="36"/>
+                  <rect class="shell ear" x="153" y="125" width="10" height="28" rx="5"/>
+                  <rect class="shell ear" x="297" y="125" width="10" height="28" rx="5"/>
+                  <circle class="ear__dot" cx="158" cy="139" r="2.1"/>
+                  <circle class="ear__dot" cx="302" cy="139" r="2.1"/>
+
+                  <rect class="screen" x="180" y="112" width="100" height="62" rx="21"/>
+
+                  <g class="face face--neutral">
+                    <g class="eye-track">
+                      <rect class="eye eye-blink" x="202" y="133" width="8" height="13" rx="4"/>
+                      <rect class="eye eye-blink" x="250" y="133" width="8" height="13" rx="4"/>
+                    </g>
+                    <path class="mouth" d="M221 158c6 5 12 5 18 0"/>
+                  </g>
+
+                  <g class="face face--curious">
+                    <g class="eye-track">
+                      <rect class="eye eye-blink" x="202" y="130" width="8" height="12" rx="4"/>
+                      <rect class="eye eye-blink" x="250" y="130" width="8" height="12" rx="4"/>
+                    </g>
+                    <path class="brow" d="M199 123h12M249 123h12"/>
+                    <circle class="mouth-o" cx="230" cy="158" r="4"/>
+                  </g>
+
+                  <g class="face face--happy">
+                    <path class="happy-eye" d="M199 141c5-8 12-8 17 0"/>
+                    <path class="happy-eye" d="M244 141c5-8 12-8 17 0"/>
+                    <path class="mouth" d="M217 152c7 11 19 11 26 0"/>
+                  </g>
+
+                  <g class="face face--excited">
+                    <circle class="eye" cx="206" cy="139" r="6.5"/>
+                    <circle class="eye" cx="254" cy="139" r="6.5"/>
+                    <circle class="eye-shine" cx="208.5" cy="136.5" r="1.7"/>
+                    <circle class="eye-shine" cx="256.5" cy="136.5" r="1.7"/>
+                    <ellipse class="mouth-fill" cx="230" cy="158" rx="9" ry="6"/>
+                  </g>
+
+                  <g class="face face--wink">
+                    <rect class="eye eye-blink" x="202" y="133" width="8" height="13" rx="4"/>
+                    <path class="happy-eye" d="M245 141c5-8 12-8 17 0"/>
+                    <path class="mouth" d="M219 157c7 4 15 2 20-2"/>
+                  </g>
+
+                  <path class="screen-gloss" d="M191 122c13-7 31-9 49-7"/>
+
+                  <g class="acc acc--question">
+                    <path class="line thin" d="M334 84c-8 10-16 17-25 22"/>
+                    <circle class="shell" cx="305" cy="109" r="3.2"/>
+                    <circle class="shell" cx="317" cy="96" r="4.4"/>
+                    <rect class="shell" x="330" y="30" width="68" height="52" rx="19"/>
+                    <text class="acc-glyph" x="364" y="67" text-anchor="middle">?</text>
+                  </g>
+
+                  <g class="acc acc--cap">
+                    <path class="cap" d="M174 80 230 54 286 80 230 106Z"/>
+                    <path class="cap-line" d="M230 54V42"/>
+                    <circle class="cap-button" cx="230" cy="40" r="3"/>
+                    <path class="cap-tassel" d="M284 79c8 8 8 18 3 25"/>
+                    <circle class="cap-tassel-end" cx="287" cy="107" r="3"/>
+                  </g>
+
+                  <g class="acc acc--bulb">
+                    <circle class="bulb-glow" cx="352" cy="62" r="23"/>
+                    <path class="bulb-body" d="M352 45a11 11 0 0 0-6 20v6h12v-6a11 11 0 0 0-6-20Z"/>
+                    <path class="bulb-line" d="M348 75v3h8v-3M349 81h6"/>
+                    <path class="bulb-rays" d="M352 28v7M333 38l4 4M371 38l-4 4M327 56h7M377 56h-7"/>
+                  </g>
+
+                  <g class="acc acc--gear">
+                    <g class="gear-spin">
+                      <circle class="shell" cx="345" cy="158" r="14"/>
+                      <path class="gear-teeth" d="M345 140v-6M345 176v6M327 158h-6M363 158h6M332 145l-4-4M358 171l4 4M358 145l4-4M332 171l-4 4"/>
+                      <circle class="line thin" cx="345" cy="158" r="4.5"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <h1 id="hero-title">Robots with a <em>human</em> <br>point of view.</h1>
+        <p class="stage__intro">An independent robotics practice for research, education, and systems that leave the lab.</p>
+        <p class="stage__hint"><span class="stage__hint-line" aria-hidden="true"></span>Hover a track. MR—01 responds.</p>
+      </section>
+
+      <div class="rail rail--left" role="group" aria-label="Research and education">
+        <button class="track-card track-card--research" id="track-research" type="button" data-mood="research" aria-pressed="false">
+          <span class="track-card__head">
+            <span class="track-card__index">01</span>
+            <span class="track-card__kind">Research</span>
+            <span class="track-card__signal" aria-hidden="true"></span>
+          </span>
+          <span class="track-card__body">
+            <span class="track-card__title">Human–robot<br>collaboration</span>
+            <span class="track-card__desc">Perception, control, and interaction for robots that work beside people — not instead of them.</span>
+          </span>
+          <span class="track-card__foot">
+            <span class="track-card__meta">Ongoing enquiry</span>
+            <span class="track-card__action">
+              <span class="track-card__action-idle">Focus</span>
+              <span class="track-card__action-active">Focused</span>
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 1.5v9M1.5 6h9"/></svg>
+            </span>
+          </span>
+        </button>
+
+        <button class="track-card track-card--education" id="track-education" type="button" data-mood="education" aria-pressed="false">
+          <span class="track-card__head">
+            <span class="track-card__index">02</span>
+            <span class="track-card__kind">Education</span>
+            <span class="track-card__signal" aria-hidden="true"></span>
+          </span>
+          <span class="track-card__body">
+            <span class="track-card__title">Learning<br>by building</span>
+            <span class="track-card__desc">Workshops, open notes, and mentorship for people who think best with their hands.</span>
+          </span>
+          <span class="track-card__foot">
+            <span class="track-card__meta">Programs &amp; mentorship</span>
+            <span class="track-card__action">
+              <span class="track-card__action-idle">Focus</span>
+              <span class="track-card__action-active">Focused</span>
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 1.5v9M1.5 6h9"/></svg>
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <div class="rail rail--right" role="group" aria-label="Projects and solutions">
+        <button class="track-card track-card--projects" id="track-projects" type="button" data-mood="projects" aria-pressed="false">
+          <span class="track-card__head">
+            <span class="track-card__index">03</span>
+            <span class="track-card__kind">Projects</span>
+            <span class="track-card__signal" aria-hidden="true"></span>
+          </span>
+          <span class="track-card__body">
+            <span class="track-card__title">Selected<br>builds</span>
+            <span class="track-card__desc">From first sketch to working prototype: small systems that solve specific problems.</span>
+          </span>
+          <span class="track-card__foot">
+            <span class="track-card__meta">Prototypes &amp; studies</span>
+            <span class="track-card__action">
+              <span class="track-card__action-idle">Focus</span>
+              <span class="track-card__action-active">Focused</span>
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 1.5v9M1.5 6h9"/></svg>
+            </span>
+          </span>
+        </button>
+
+        <button class="track-card track-card--solutions" id="track-solutions" type="button" data-mood="solutions" aria-pressed="false">
+          <span class="track-card__head">
+            <span class="track-card__index">04</span>
+            <span class="track-card__kind">Solutions</span>
+            <span class="track-card__signal" aria-hidden="true"></span>
+          </span>
+          <span class="track-card__body">
+            <span class="track-card__title">Applied<br>robotics</span>
+            <span class="track-card__desc">Sensing, automation, and interface work for real-world contexts.</span>
+          </span>
+          <span class="track-card__foot">
+            <span class="track-card__meta">Collaborations</span>
+            <span class="track-card__action">
+              <span class="track-card__action-idle">Focus</span>
+              <span class="track-card__action-active">Focused</span>
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 1.5v9M1.5 6h9"/></svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </main>
+
+    <section class="modules" aria-label="Lab index">
+      <div class="module">
+        <div class="module__top">
+          <span class="module__index">01</span>
+          <span class="module__status">Soon</span>
+        </div>
+        <h2 class="module__title">Notes</h2>
+        <p class="module__desc">Field notes on building, testing, and learning.</p>
+      </div>
+
+      <div class="module">
+        <div class="module__top">
+          <span class="module__index">02</span>
+          <span class="module__status">Soon</span>
+        </div>
+        <h2 class="module__title">Publications</h2>
+        <p class="module__desc">Papers, talks, and technical write-ups.</p>
+      </div>
+
+      <div class="module">
+        <div class="module__top">
+          <span class="module__index">03</span>
+          <span class="module__status">Soon</span>
+        </div>
+        <h2 class="module__title">Resources</h2>
+        <p class="module__desc">Open tools, templates, and reading lists.</p>
+      </div>
+
+      <a class="module module--open" href="mailto:hello@merobot.org">
+        <span class="module__top">
+          <span class="module__index">04</span>
+          <span class="module__status module__status--open"><span class="module__dot" aria-hidden="true"></span>Open</span>
+        </span>
+        <h2 class="module__title">Collaborate</h2>
+        <p class="module__desc">Bring a question, a prototype, or a good problem.</p>
+        <span class="module__arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 12.5 12.5 3.5M5.5 3.5h7v7"/></svg>
+        </span>
+      </a>
+    </section>
+
+    <footer class="site-footer">
+      <p class="footer__statement">Have a problem <em>worth building around?</em></p>
+      <div class="footer__meta">
+        <a class="footer__email" href="mailto:hello@merobot.org">hello@merobot.org
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 12.5 12.5 3.5M5.5 3.5h7v7"/></svg>
+        </a>
+        <span class="footer__copy">© 2026 MEROBOT</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

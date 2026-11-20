@@ -1,0 +1,10 @@
+# Local design tooling and generated previews — not part of the deployed site.
+tools/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
