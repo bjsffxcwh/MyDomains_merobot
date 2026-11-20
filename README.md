@@ -59,8 +59,6 @@ python -m http.server 4173 --bind 127.0.0.1
 └─ site.webmanifest
 ```
 
-`tools/` 是本地设计工具（截图、纹理与 OG 渲染脚本），已加入 `.gitignore`，不会部署。
-
 ## 画面说明
 
 页面所有视觉素材均为本站原创：机器人、field note 插图、图标、版式，以及由站内矢量草甸底稿生成的手绘感草甸。没有使用照片、外部插画或第三方图片。
@@ -90,7 +88,7 @@ python -m http.server 4173 --bind 127.0.0.1
 也可以不用 Git，直接上传：
 
 ```powershell
-npx wrangler pages deploy . --project-name=merobot
+npx wrangler pages deploy . --project-name=mydomains-merobot
 ```
 
 > `_headers`、`_redirects`、`404.html` 会被 Cloudflare Pages 自动识别。安全响应头包含 CSP；目前已允许 Cloudflare Web Analytics 的脚本与上报域名。新增其他第三方脚本、分析或嵌入内容时，需要同步调整 CSP。若 Cloudflare 的 Email Address Obfuscation 或 Rocket Loader 会向页面注入脚本，上线前请关闭或把对应域名加入 CSP。
