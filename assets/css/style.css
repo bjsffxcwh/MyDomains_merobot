@@ -66,7 +66,7 @@ body::before {
   background-repeat: repeat;
   background-size: 220px 220px;
   content: "";
-  opacity: 0.14;
+  opacity: 0.18;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
@@ -424,6 +424,17 @@ svg {
     4px 4px 0 rgba(34, 54, 43, 0.1);
 }
 
+.scene::before {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background:
+    linear-gradient(to bottom, rgba(30, 51, 41, 0.16), transparent 15%),
+    linear-gradient(to top, rgba(30, 51, 41, 0.5), transparent 22%);
+  content: "";
+  pointer-events: none;
+}
+
 .scene::after {
   position: absolute;
   inset: 5px;
@@ -433,22 +444,17 @@ svg {
   pointer-events: none;
 }
 
-.landscape {
+.scene__image {
   position: absolute;
   inset: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
-}
-
-.scene__texture {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: url("/assets/img/wash.webp") center / cover no-repeat;
-  opacity: 0.34;
-  mix-blend-mode: multiply;
+  object-fit: cover;
+  object-position: center 55%;
   pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .scene__glow {
@@ -480,9 +486,9 @@ svg {
   inset: 0;
   z-index: 5;
   background:
-    radial-gradient(circle at 78% 22%, rgba(255, 241, 203, 0.5), transparent 34%),
-    linear-gradient(118deg, transparent 50%, rgba(255, 239, 195, 0.14) 72%, transparent 88%);
-  opacity: 0.7;
+    radial-gradient(circle at 78% 22%, rgba(255, 241, 203, 0.42), transparent 34%),
+    linear-gradient(118deg, transparent 48%, rgba(255, 239, 195, 0.16) 70%, transparent 88%);
+  opacity: 0.62;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -559,115 +565,6 @@ svg {
   50% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-/* Landscape animation */
-
-.cloud--a {
-  animation: cloud-drift 24s ease-in-out infinite alternate;
-}
-
-.cloud--b {
-  animation: cloud-drift 31s ease-in-out -6s infinite alternate-reverse;
-}
-
-.cloud--c {
-  animation: cloud-drift 27s ease-in-out -12s infinite alternate;
-}
-
-@keyframes cloud-drift {
-  from {
-    transform: translateX(-7px);
-  }
-  to {
-    transform: translateX(9px);
-  }
-}
-
-.bird-mark {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.bird-mark--1 {
-  animation: bird-float 9s ease-in-out infinite;
-}
-
-.bird-mark--2 {
-  animation: bird-float 11s ease-in-out -3s infinite;
-}
-
-.bird-mark--3 {
-  animation: bird-float 8s ease-in-out -5s infinite;
-}
-
-@keyframes bird-float {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(5px, -4px);
-  }
-}
-
-.turbine__blades {
-  transform-box: view-box;
-  transform-origin: 778px 264px;
-  animation: turbine-turn 28s linear infinite;
-}
-
-@keyframes turbine-turn {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.grass--back {
-  transform-box: view-box;
-  transform-origin: 450px 520px;
-  animation: grass-sway 7s ease-in-out infinite;
-}
-
-.grass--front {
-  transform-box: view-box;
-  transform-origin: 450px 520px;
-  animation: grass-sway 5.4s ease-in-out -1.7s infinite reverse;
-}
-
-.grass--near {
-  transform-box: view-box;
-  transform-origin: 450px 520px;
-  animation: grass-sway 4.8s ease-in-out -0.8s infinite;
-}
-
-@keyframes grass-sway {
-  0%,
-  100% {
-    transform: rotate(-0.18deg);
-  }
-  50% {
-    transform: rotate(0.22deg);
-  }
-}
-
-.wind-lines path {
-  stroke-dasharray: 70 210;
-  animation: wind-pass 9s linear infinite;
-}
-
-.wind-lines path:nth-child(2) {
-  animation-delay: -3s;
-}
-
-.wind-lines path:nth-child(3) {
-  animation-delay: -6s;
-}
-
-@keyframes wind-pass {
-  to {
-    stroke-dashoffset: -280;
   }
 }
 
@@ -1511,13 +1408,13 @@ svg {
 
 .field-card__figure::before {
   position: absolute;
-  top: -35%;
-  right: -8%;
-  width: 58%;
-  height: 150%;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(255, 252, 242, 0.65), transparent 75%);
+  inset: 0;
+  background:
+    linear-gradient(rgba(250, 242, 226, 0.66), rgba(250, 242, 226, 0.84)),
+    url("/assets/img/meadow-field-900.webp") center 58% / cover no-repeat;
   content: "";
+  mix-blend-mode: multiply;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -2551,6 +2448,14 @@ svg {
   letter-spacing: 1.3px;
 }
 
+.error-label--on-image {
+  fill: rgba(247, 238, 219, 0.7);
+}
+
+.error-bot {
+  filter: drop-shadow(0 7px 9px rgba(11, 24, 20, 0.3));
+}
+
 .error-shell {
   fill: #f7eedb;
   stroke: var(--ink);
@@ -2742,11 +2647,6 @@ svg {
   .scarf-tails,
   .plant,
   .bird,
-  .cloud,
-  .bird-mark,
-  .turbine__blades,
-  .grass,
-  .wind-lines path,
   .scene__pulse,
   .firefly {
     animation: none !important;

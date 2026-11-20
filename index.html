@@ -28,6 +28,7 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/assets/img/meadow-field-1600.webp" imagesrcset="/assets/img/meadow-field-900.webp 900w, /assets/img/meadow-field-1600.webp 1600w" imagesizes="(max-width: 980px) 100vw, 46vw" fetchpriority="high">
   <link rel="stylesheet" href="/assets/css/fonts.css?v=20261121-2">
   <link rel="stylesheet" href="/assets/css/style.css?v=20261121-2">
   <script src="/assets/js/main.js?v=20261121-2" defer></script>
@@ -85,220 +86,16 @@
     <main class="main" id="main">
       <section class="stage" aria-labelledby="hero-title">
         <div class="scene" data-mood="idle" aria-hidden="true">
-          <svg class="landscape" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <defs>
-              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#9fc4cf"/>
-                <stop offset=".42" stop-color="#d2e2da"/>
-                <stop offset=".72" stop-color="#f1e2c1"/>
-                <stop offset="1" stop-color="#f1e2c1"/>
-              </linearGradient>
-              <radialGradient id="sunGlow">
-                <stop offset="0" stop-color="#f7d792" stop-opacity=".92"/>
-                <stop offset=".48" stop-color="#f7d792" stop-opacity=".28"/>
-                <stop offset="1" stop-color="#f7d792" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="cloudBlur" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="1.6"/>
-              </filter>
-              <filter id="washBlur" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="12"/>
-              </filter>
-              <filter id="paintEdge" x="-4%" y="-4%" width="108%" height="108%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.008 0.018" numOctaves="2" seed="9" result="noise"/>
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-              </filter>
-              <linearGradient id="sceneShade" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1e332b" stop-opacity="0"/>
-                <stop offset=".78" stop-color="#1e332b" stop-opacity="0"/>
-                <stop offset="1" stop-color="#1e332b" stop-opacity=".14"/>
-              </linearGradient>
-              <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#c1cfb2"/>
-                <stop offset="1" stop-color="#a9bc9a"/>
-              </linearGradient>
-              <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#9db38c"/>
-                <stop offset="1" stop-color="#839d78"/>
-              </linearGradient>
-              <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#809b71"/>
-                <stop offset="1" stop-color="#66845e"/>
-              </linearGradient>
-              <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#68865d"/>
-                <stop offset="1" stop-color="#4f6e4b"/>
-              </linearGradient>
-            </defs>
+                    <img
+            class="scene__image"
+            src="/assets/img/meadow-field-1600.webp"
+            srcset="/assets/img/meadow-field-900.webp 900w, /assets/img/meadow-field-1600.webp 1600w"
+            sizes="(max-width: 980px) 100vw, 46vw"
+            width="1600" height="828"
+            alt=""
+            fetchpriority="high"
+            decoding="async">
 
-            <rect width="900" height="520" fill="url(#skyGrad)"/>
-            <ellipse cx="250" cy="188" rx="270" ry="108" fill="#dfece4" opacity=".16" filter="url(#washBlur)"/>
-            <ellipse cx="690" cy="320" rx="300" ry="54" fill="#f7e8c6" opacity=".2" filter="url(#washBlur)"/>
-            <circle cx="690" cy="142" r="158" fill="url(#sunGlow)"/>
-            <circle cx="690" cy="142" r="72" fill="none" stroke="#f5d899" stroke-width="1.1" opacity=".24"/>
-            <circle cx="690" cy="142" r="94" fill="none" stroke="#f5d899" stroke-width="1" opacity=".12"/>
-            <circle cx="690" cy="142" r="52" fill="#f2d18e" opacity=".92"/>
-            <circle cx="690" cy="142" r="52" fill="none" stroke="#f8e8c6" stroke-width="1.3" opacity=".62"/>
-
-            <g class="clouds" filter="url(#cloudBlur)">
-              <g class="cloud cloud--a" fill="#f8efdd" opacity=".82">
-                <ellipse cx="104" cy="132" rx="55" ry="22"/>
-                <circle cx="88" cy="116" r="25"/>
-                <circle cx="121" cy="108" r="33"/>
-                <circle cx="152" cy="123" r="23"/>
-                <ellipse cx="126" cy="142" rx="77" ry="16"/>
-              </g>
-              <g class="cloud cloud--b" fill="#f9f1e2" opacity=".66">
-                <ellipse cx="526" cy="102" rx="43" ry="14"/>
-                <circle cx="514" cy="91" r="18"/>
-                <circle cx="540" cy="84" r="24"/>
-                <ellipse cx="540" cy="106" rx="57" ry="11"/>
-              </g>
-              <g class="cloud cloud--c" fill="#f8eedc" opacity=".48">
-                <ellipse cx="792" cy="232" rx="38" ry="11"/>
-                <circle cx="783" cy="223" r="14"/>
-                <circle cx="804" cy="218" r="19"/>
-                <ellipse cx="805" cy="235" rx="48" ry="9"/>
-              </g>
-            </g>
-
-            <g class="birds" fill="none" stroke="#405646" stroke-width="1.6" stroke-linecap="round">
-              <path class="bird-mark bird-mark--1" d="M536 138c4-5 8-5 12 0 4-5 8-5 12 0"/>
-              <path class="bird-mark bird-mark--2" d="M575 118c3-4 6-4 9 0 3-4 6-4 9 0"/>
-              <path class="bird-mark bird-mark--3" d="M507 109c2-3 5-3 7 0 2-3 5-3 7 0"/>
-            </g>
-
-            <g class="hills" filter="url(#paintEdge)">
-              <path d="M0 330c74-54 146-72 226-32 56 28 102 28 160-2 64-33 108-55 172-30 78 30 154 44 342 18v40H0Z" fill="#b9ccd0" opacity=".36"/>
-              <path d="M0 316c98-46 174-44 261-11 84 32 149 18 228-12 88-33 165-27 238 6 63 29 117 34 173 23v198H0Z" fill="url(#hillBack)"/>
-              <path d="M0 359c112-36 203-29 295 6 88 33 155 6 241-18 87-24 178-6 364 48v125H0Z" fill="url(#hillMid)"/>
-              <path d="M0 403c112-22 206-5 307 18 101 23 192-8 298-21 96-12 192 2 295 30v90H0Z" fill="url(#hillFront)"/>
-              <path d="M0 447c142-23 251 2 367 18 117 16 234-18 343-25 69-5 126 2 190 13v67H0Z" fill="url(#hillNear)"/>
-              <path d="M74 373c54-13 107-12 159 2M601 390c48-14 95-16 143-6M260 424c43-8 86-6 129 4" fill="none" stroke="#556f4d" stroke-width="1.2" opacity=".22"/>
-            </g>
-
-            <g class="hill-light" fill="none" stroke="#f3e7c9" stroke-linecap="round" opacity=".27">
-              <path d="M0 316c98-46 174-44 261-11" stroke-width="1.4"/>
-              <path d="M0 359c112-36 203-29 295 6" stroke-width="1.2"/>
-              <path d="M0 403c112-22 206-5 307 18" stroke-width="1"/>
-              <path d="M600 390c80-28 150-30 243-7" stroke-width="1" opacity=".7"/>
-            </g>
-
-            <g class="hill-washes" filter="url(#washBlur)">
-              <ellipse cx="205" cy="424" rx="300" ry="72" fill="#9db487" opacity=".2"/>
-              <ellipse cx="712" cy="462" rx="330" ry="78" fill="#4e6b49" opacity=".17"/>
-              <ellipse cx="520" cy="410" rx="240" ry="46" fill="#ead6a6" opacity=".13"/>
-              <ellipse cx="248" cy="381" rx="150" ry="24" fill="#6f8b62" opacity=".1"/>
-              <ellipse cx="566" cy="397" rx="120" ry="20" fill="#6f8b62" opacity=".08"/>
-            </g>
-
-            <g class="tree-shadow" filter="url(#washBlur)">
-              <ellipse cx="176" cy="369" rx="65" ry="10" fill="#314d37" opacity=".28"/>
-            </g>
-
-            <g class="station">
-              <path d="M614 365v-19l16-7 16 7v19Z" fill="#ead9b8" stroke="#405544" stroke-width="1.4"/>
-              <path d="M610 346 630 337 650 346" fill="none" stroke="#405544" stroke-width="1.6" stroke-linejoin="round"/>
-              <rect x="626" y="352" width="6" height="13" fill="#d2a04a" opacity=".82"/>
-              <path d="M642 337c2-6 7-8 9-14" fill="none" stroke="#f7eedb" stroke-width="1.2" stroke-linecap="round" opacity=".45"/>
-              <path d="M608 369h44" fill="none" stroke="#556f4d" stroke-width="1" opacity=".3"/>
-            </g>
-
-            <g class="pollen" fill="#f8efdc">
-              <circle cx="306" cy="292" r="1.5"/>
-              <circle cx="338" cy="268" r="1"/>
-              <circle cx="596" cy="304" r="1.6"/>
-              <circle cx="566" cy="246" r="1"/>
-              <circle cx="742" cy="288" r="1.2"/>
-              <circle cx="248" cy="336" r="1"/>
-            </g>
-
-            <g class="turbine">
-              <path d="M778 367V264" fill="none" stroke="#405544" stroke-width="2.4"/>
-              <path d="M768 367h20" fill="none" stroke="#405544" stroke-width="2.4"/>
-              <g class="turbine__blades" fill="none" stroke="#f7eedb" stroke-width="5.2" stroke-linecap="round">
-                <path d="M778 264c0-22 4-38 12-50"/>
-                <path d="M778 264c18 10 32 18 47 19"/>
-                <path d="M778 264c-17 12-28 25-34 40"/>
-              </g>
-              <circle cx="778" cy="264" r="4.2" fill="#405544"/>
-            </g>
-
-            <g class="tree">
-              <path d="M174 371c-4-29 5-56 2-83M175 329c-14-8-24-21-26-35M176 315c12-6 22-17 26-30" fill="none" stroke="#3b4c3b" stroke-width="4.6" stroke-linecap="round"/>
-              <g fill="#5f7c55">
-                <ellipse cx="149" cy="276" rx="31" ry="20" opacity=".95"/>
-                <ellipse cx="186" cy="261" rx="37" ry="24" opacity=".9"/>
-                <ellipse cx="213" cy="281" rx="25" ry="18" opacity=".84"/>
-                <ellipse cx="170" cy="292" rx="40" ry="21" opacity=".82"/>
-              </g>
-              <g fill="#7f986b" opacity=".82">
-                <ellipse cx="157" cy="260" rx="17" ry="11"/>
-                <ellipse cx="197" cy="255" rx="14" ry="9"/>
-              </g>
-              <g fill="#69865b" opacity=".9">
-                <ellipse cx="133" cy="286" rx="14" ry="9"/>
-                <ellipse cx="202" cy="296" rx="16" ry="10"/>
-                <ellipse cx="163" cy="303" rx="12" ry="7"/>
-                <ellipse cx="224" cy="274" rx="10" ry="7"/>
-              </g>
-              <g fill="#91a97c" opacity=".72">
-                <ellipse cx="142" cy="252" rx="10" ry="7"/>
-                <ellipse cx="183" cy="236" rx="12" ry="8"/>
-                <ellipse cx="208" cy="262" rx="9" ry="6"/>
-                <ellipse cx="161" cy="246" rx="7" ry="5"/>
-              </g>
-            </g>
-
-            <path class="field-path" d="M423 520c-23-32-17-58 12-79 26-18 54-17 77-33" fill="none" stroke="#d8c08c" stroke-width="21" opacity=".58" stroke-linecap="round"/>
-            <path d="M430 520c-20-31-14-54 12-73 24-17 50-17 72-31" fill="none" stroke="#b99a64" stroke-width="1.1" opacity=".34"/>
-
-            <g class="grass grass--back" fill="none" stroke="#4c6a47" stroke-width="1.6" stroke-linecap="round" opacity=".8">
-              <path d="M24 520c2-22-3-36-9-48M38 520c0-18 3-31 8-41M51 520c-1-25 2-38 7-48M64 520c2-19 6-31 11-40M78 520c0-15 2-25 5-33M93 520c-1-23 2-36 7-47M107 520c2-17 7-29 13-37M123 520c0-24 4-37 10-47M139 520c1-16 5-27 9-35M156 520c-1-21 2-33 7-43M173 520c2-17 6-28 11-36"/>
-              <path d="M666 520c2-22-3-36-9-48M681 520c0-18 3-31 8-41M695 520c-1-25 2-38 7-48M709 520c2-19 6-31 11-40M724 520c0-15 2-25 5-33M740 520c-1-23 2-36 7-47M755 520c2-17 7-29 13-37M771 520c0-24 4-37 10-47M787 520c1-16 5-27 9-35M804 520c-1-21 2-33 7-43M821 520c2-17 6-28 11-36M838 520c0-19 3-31 8-41"/>
-            </g>
-            <g class="grass grass--front" fill="none" stroke="#3f5c3d" stroke-width="2" stroke-linecap="round" opacity=".9">
-              <path d="M8 520c2-30-4-48-12-62M26 520c-1-25 2-42 7-56M46 520c1-31 5-48 12-58M68 520c-1-24 1-39 5-51M88 520c2-33 7-50 14-59M112 520c-1-25 3-42 8-53M136 520c2-28 7-44 14-52M158 520c-1-22 1-37 5-48M244 520c2-19 6-32 11-42M585 520c-1-21 2-35 7-46M654 520c2-29 7-45 14-56M680 520c-1-25 2-41 7-54M704 520c2-33 7-50 14-59M730 520c-1-24 2-39 6-51M754 520c2-27 7-43 14-52M778 520c-1-22 2-37 6-48M802 520c2-31 7-47 14-56M826 520c-1-24 2-40 7-51M850 520c2-28 7-44 14-53M874 520c-1-20 1-34 5-44"/>
-            </g>
-            <g class="grass grass--near" fill="none" stroke="#2f4b36" stroke-width="3" stroke-linecap="round" opacity=".8">
-              <path d="M-6 520c8-42 1-64-12-80M18 520c-2-34 4-55 12-70M40 520c4-46 12-66 22-78M94 520c-3-37 3-56 10-69M122 520c5-42 13-60 23-70M884 520c-8-44-2-66 12-82M858 520c3-36-3-56-12-72M832 520c-4-41-12-61-23-73M792 520c2-34 8-53 15-65"/>
-            </g>
-            <path class="near-shade" d="M0 496c96-12 182-4 278 6 104 11 190-2 284-10 115-10 217-4 338 9v19H0Z" fill="#314e37" opacity=".18"/>
-
-            <g class="flowers">
-              <g class="flower flower--cream" transform="translate(112 486)">
-                <path d="M0 20V3" fill="none" stroke="#4c6a47" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="-4" cy="1" r="3.2" fill="#f5e8ca"/>
-                <circle cx="4" cy="1" r="3.2" fill="#f5e8ca"/>
-                <circle cx="0" cy="-4" r="3.2" fill="#f5e8ca"/>
-                <circle cx="0" cy="5" r="3.2" fill="#f5e8ca"/>
-                <circle cx="0" cy="1" r="1.6" fill="#d3a04a"/>
-              </g>
-              <g class="flower flower--rust" transform="translate(668 492)">
-                <path d="M0 18V2" fill="none" stroke="#4c6a47" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="-3.5" cy="0" r="2.8" fill="#bd6d4b"/>
-                <circle cx="3.5" cy="0" r="2.8" fill="#bd6d4b"/>
-                <circle cx="0" cy="-3.5" r="2.8" fill="#bd6d4b"/>
-                <circle cx="0" cy="3.5" r="2.8" fill="#bd6d4b"/>
-                <circle cx="0" cy="0" r="1.5" fill="#f2d18e"/>
-              </g>
-              <g class="flower flower--gold" transform="translate(736 476)">
-                <path d="M0 15V1" fill="none" stroke="#4c6a47" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="0" cy="0" r="4.2" fill="#e7c37c"/>
-                <circle cx="0" cy="0" r="1.5" fill="#7a5b2e"/>
-              </g>
-            </g>
-
-            <g class="wind-lines" fill="none" stroke="#fbf3e0" stroke-width="1.15" stroke-linecap="round" opacity=".48">
-              <path d="M70 252c48-14 93-14 139-2"/>
-              <path d="M628 222c35-9 68-8 100 2"/>
-              <path d="M265 178c24-7 48-7 72 0"/>
-            </g>
-
-            <rect width="900" height="520" fill="url(#sceneShade)"/>
-          </svg>
-
-          <div class="scene__texture"></div>
           <div class="scene__glow"></div>
           <div class="scene__wash"></div>
           <div class="scene__light"></div>

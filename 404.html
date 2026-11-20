@@ -52,27 +52,12 @@
           <clipPath id="portalClip">
             <circle cx="280" cy="280" r="218"/>
           </clipPath>
-          <linearGradient id="errorSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#92aeb9"/>
-            <stop offset=".48" stop-color="#cdd9cc"/>
-            <stop offset=".78" stop-color="#ead3a9"/>
-            <stop offset="1" stop-color="#e6c997"/>
-          </linearGradient>
-          <linearGradient id="errorHill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7c9579"/>
-            <stop offset="1" stop-color="#5d785d"/>
-          </linearGradient>
         </defs>
 
         <circle class="error-ring" cx="280" cy="280" r="218"/>
         <g clip-path="url(#portalClip)">
-          <rect width="560" height="560" fill="url(#errorSky)"/>
-          <circle cx="372" cy="142" r="68" fill="#f0cf95" opacity=".86"/>
-          <circle cx="372" cy="142" r="88" fill="none" stroke="#f5ddb3" stroke-width="1.2" opacity=".4"/>
-          <path d="M-30 330c92-49 166-57 251-25 79 30 152 19 236-12 55-21 103-23 145-12v295H-30Z" fill="#a7b99a" opacity=".7"/>
-          <path d="M-20 382c92-31 177-25 268 4 92 29 170 7 260-16 51-13 91-8 142 5v205H-20Z" fill="url(#errorHill)"/>
-          <path d="M0 466c114-18 218 7 329 16 103 9 183-18 281-18v96H0Z" fill="#405d47"/>
-          <path d="M0 500c82-20 159-19 242-2 101 21 190 9 318-9v71H0Z" fill="#324f3b"/>
+          <image href="/assets/img/meadow-dusk-900.webp" x="0" y="0" width="560" height="560" preserveAspectRatio="xMidYMid slice"/>
+          <rect width="560" height="560" fill="#152b2f" opacity=".12"/>
 
           <g class="error-bot">
             <ellipse cx="274" cy="456" rx="92" ry="10" fill="#243a2c" opacity=".22"/>
@@ -103,9 +88,6 @@
           </g>
 
           <path class="error-trail" d="M359 398c31-10 49-27 56-48"/>
-          <g class="error-grass" stroke="#2d4934" stroke-width="2" stroke-linecap="round" fill="none" opacity=".8">
-            <path d="M40 520c2-33-3-53-10-65M64 520c0-27 4-43 9-56M88 520c2-37 7-54 14-64M448 520c-2-30 3-49 9-62M474 520c0-28 5-44 10-56M500 520c2-34 7-51 14-60"/>
-          </g>
 
           <g class="error-fireflies" fill="#e8c77f">
             <circle cx="169" cy="328" r="2.2"/>
@@ -117,7 +99,7 @@
 
         <circle class="error-orbit" cx="280" cy="280" r="236"/>
         <path class="error-ticks" d="M280 38v22M280 500v22M38 280h22M500 280h22"/>
-        <text class="error-label" x="280" y="76" text-anchor="middle">NO SIGNAL / FIELD NOTE 404</text>
+        <text class="error-label error-label--on-image" x="280" y="76" text-anchor="middle">NO SIGNAL / FIELD NOTE 404</text>
         <text class="error-label" x="280" y="522" text-anchor="middle">MR—01 / SEARCHING</text>
       </svg>
     </div>

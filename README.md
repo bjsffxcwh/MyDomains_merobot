@@ -1,8 +1,8 @@
 # merobot.org
 
-MEROBOT 的单页英文官网。视觉概念是 **“Field Station / 野外观察站”**：一页来自机器人实验室的田野笔记，暖色纸面、手绘草甸、黄铜与铁锈色的机器人，以及硬朗、清晰的现代技术排版。中央机器人仍保留完整的待命与悬停互动，左右四张 field note 卡片对应 Research、Education、Projects、Solutions，底部是四个预留入口与联系方式通栏。
+MEROBOT 的单页英文官网。视觉概念是 **“Field Station / 野外观察站”**：一页来自机器人实验室的田野笔记，暖纸、等高线、手绘感草甸与黄铜/铁锈色的线稿机器人，配硬朗清晰的现代技术排版。中央机器人保留完整的待命与悬停互动，左右四张 field note 对应 Research、Education、Projects、Solutions，底部是四个预留入口与联系方式通栏。
 
-当前状态：**v2 视觉方向样稿，等待确认后部署。**
+当前状态：**v3 手绘方向样稿，等待确认后部署。**
 
 ## 本地预览
 
@@ -14,9 +14,9 @@ python -m http.server 4173 --bind 127.0.0.1
 
 ## 交互
 
-- 机器人待命：呼吸式浮动、地面阴影、随机眨眼、围巾和肩头植物随风轻摆，手里的鸟会轻轻点头。
+- 机器人待命：呼吸式浮动、地面阴影、随机眨眼；围巾、肩头植物和手里的鸟持续轻动。
 - 鼠标移动：头部微微转动，眼睛跟随光标。
-- 悬停或聚焦任一轨道卡/顶部 tab，机器人切换表情与动作：
+- 悬停或聚焦任一轨道卡/顶部 tab，机器人切换对应表情与动作：
   - Research：抬头观察，出现叶片放大镜与萤火；
   - Education：开心，学士帽落下；
   - Projects：兴奋，抬臂挥手，纸飞机起飞；
@@ -27,17 +27,17 @@ python -m http.server 4173 --bind 127.0.0.1
 
 ## 视觉规范
 
-- **概念**：吉卜力式的自然与机械共存，但不是复制作品；画面全部为原创 SVG/程序化纹理。
-- **气质**：温暖、手绘、略带旧纸感；技术层则使用精确的网格、坐标标注和等宽字。
+- **概念**：自然与机械共存的田野观察站。不是复制吉卜力作品；机器人、卡片插画、排版与交互均为原创。
+- **背景**：在公有领域草甸照片基础上做了大幅调色与绘画化处理，作为“手绘背景”；机器人保持干净的线稿/赛璐璐角色感。
 - **字体**：Archivo（可变宽度，硬朗无衬线）+ IBM Plex Mono（标签/数据）。
 - **颜色**：暖纸 `#f3e9d3`、森林绿 `#22362b`、苔藓 `#6f8b62`、赭金 `#d2a04a`、铁锈 `#a95433`。
-- **纹理**：SVG 颗粒、等高线背景、程序生成的水彩叠色；全部本地资源，无第三方请求。
+- **纹理**：等高线背景、纸张颗粒、照片基底上的绘画化处理；全部本地资源，无第三方运行时请求。
 
 ## 文件结构
 
 ```text
 /
-├─ index.html                 # 首页（文案、场景 SVG、机器人、四张 field note）
+├─ index.html                 # 首页（文案、场景、机器人、四张 field note）
 ├─ 404.html                   # 404 页面（“Off the map.”）
 ├─ assets/
 │  ├─ css/fonts.css           # 自托管字体声明
@@ -48,9 +48,10 @@ python -m http.server 4173 --bind 127.0.0.1
 │     ├─ favicon.svg
 │     ├─ apple-touch-icon.png
 │     ├─ og-cover.jpg         # 1200×630 分享图
+│     ├─ meadow-field-1600.webp / meadow-field-900.webp
+│     ├─ meadow-dusk-900.webp # 404 的暮色草甸
 │     ├─ grain.svg            # 纸张颗粒
-│     ├─ contours.svg         # 等高线纹理
-│     └─ wash.webp            # 程序生成的水彩叠色
+│     └─ contours.svg         # 等高线纹理
 ├─ _headers                   # Cloudflare Pages 安全响应头与缓存
 ├─ _redirects                 # /index.html → /
 ├─ robots.txt
@@ -59,6 +60,10 @@ python -m http.server 4173 --bind 127.0.0.1
 ```
 
 `tools/` 是本地设计工具（截图、纹理与 OG 渲染脚本），已加入 `.gitignore`，不会部署。
+
+## 图片版权
+
+草甸基底来自 **“Summer meadow, Cades Cove, July 2013” — Warren Bielenberg / Great Smoky Mountains National Park**，公有领域（[Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Summer_meadow,_Cades_Cove,_July_2013--Warren_Bielenberg_(39405197074).jpg>)）。在该照片上进行了调色、绘画化、裁切与叠加处理；机器人、插画、版式和交互为本站设计。
 
 ## 待确认 / 替换清单
 
@@ -69,7 +74,7 @@ python -m http.server 4173 --bind 127.0.0.1
 5. **页脚年份**：当前为 `© 2026`。
 6. **社交链接**：首版未放 GitHub / LinkedIn / X，避免空链接。
 
-文案集中在 `index.html`；颜色、字体、间距集中在 `assets/css/style.css` 顶部 `:root`；机器人场景在 `index.html` 的内联 SVG 中。
+文案集中在 `index.html`；颜色、字体、间距集中在 `assets/css/style.css` 顶部 `:root`。
 
 ## 部署到 Cloudflare Pages
 
