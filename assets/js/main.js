@@ -2,12 +2,13 @@
   "use strict";
 
   const robot = document.querySelector(".robot");
-  const scene = document.querySelector(".scene");
-  const stage = document.querySelector(".stage");
+  const world = document.querySelector(".world");
+  const hero = document.querySelector(".hero");
+  const unit = document.querySelector(".hero__unit");
   const stateLabel = document.querySelector("#robot-state");
   const controls = Array.from(document.querySelectorAll("button[data-mood]"));
 
-  if (!robot || !scene || !stage || !stateLabel || controls.length === 0) {
+  if (!robot || !world || !hero || !unit || !stateLabel || controls.length === 0) {
     return;
   }
 
@@ -27,8 +28,8 @@
     const mood = hoverMood || pinnedMood || focusMood || "idle";
 
     robot.dataset.mood = mood;
-    scene.dataset.mood = mood;
-    stage.dataset.mood = mood;
+    world.dataset.mood = mood;
+    hero.dataset.mood = mood;
     stateLabel.textContent = moods[mood];
 
     controls.forEach((control) => {
@@ -92,12 +93,21 @@
     return;
   }
 
+  const viewport = () => ({
+    width: document.documentElement.clientWidth || window.innerWidth,
+    height: document.documentElement.clientHeight || window.innerHeight,
+  });
+
   let targetX = 0;
   let targetY = 0;
   let targetTilt = 0;
+  let targetWorldX = 0;
+  let targetWorldY = 0;
   let currentX = 0;
   let currentY = 0;
   let currentTilt = 0;
+  let currentWorldX = 0;
+  let currentWorldY = 0;
   let frameRequested = false;
 
   function clamp(value, min, max) {
@@ -108,23 +118,31 @@
     robot.style.setProperty("--look-x", `${currentX.toFixed(2)}px`);
     robot.style.setProperty("--look-y", `${currentY.toFixed(2)}px`);
     robot.style.setProperty("--head-tilt", `${currentTilt.toFixed(2)}deg`);
+    world.style.setProperty("--world-x", `${currentWorldX.toFixed(2)}px`);
+    world.style.setProperty("--world-y", `${currentWorldY.toFixed(2)}px`);
   }
 
   function tick() {
     currentX += (targetX - currentX) * 0.16;
     currentY += (targetY - currentY) * 0.16;
     currentTilt += (targetTilt - currentTilt) * 0.12;
+    currentWorldX += (targetWorldX - currentWorldX) * 0.09;
+    currentWorldY += (targetWorldY - currentWorldY) * 0.09;
     paint();
 
     const settled =
       Math.abs(targetX - currentX) < 0.02 &&
       Math.abs(targetY - currentY) < 0.02 &&
-      Math.abs(targetTilt - currentTilt) < 0.02;
+      Math.abs(targetTilt - currentTilt) < 0.02 &&
+      Math.abs(targetWorldX - currentWorldX) < 0.03 &&
+      Math.abs(targetWorldY - currentWorldY) < 0.03;
 
     if (settled) {
       currentX = targetX;
       currentY = targetY;
       currentTilt = targetTilt;
+      currentWorldX = targetWorldX;
+      currentWorldY = targetWorldY;
       paint();
       frameRequested = false;
       return;
@@ -140,39 +158,44 @@
     }
   }
 
-  function resetGaze() {
+  function resetMotion() {
     targetX = 0;
     targetY = 0;
     targetTilt = 0;
+    targetWorldX = 0;
+    targetWorldY = 0;
     requestPaint();
   }
 
   window.addEventListener(
     "pointermove",
     (event) => {
-      const bounds = scene.getBoundingClientRect();
-      if (bounds.width === 0 || bounds.height === 0) {
+      const { width, height } = viewport();
+      const bounds = unit.getBoundingClientRect();
+      if (!width || !height || bounds.width === 0) {
         return;
       }
 
       const centerX = bounds.left + bounds.width / 2;
-      const centerY = bounds.top + bounds.height * 0.53;
-      const normalizedX = clamp((event.clientX - centerX) / (bounds.width * 0.7), -1, 1);
-      const normalizedY = clamp((event.clientY - centerY) / (bounds.height * 0.7), -1, 1);
+      const centerY = bounds.top + bounds.height * 0.43;
+      const normalizedX = clamp((event.clientX - centerX) / (width * 0.56), -1, 1);
+      const normalizedY = clamp((event.clientY - centerY) / (height * 0.55), -1, 1);
 
-      targetX = normalizedX * 5.2;
-      targetY = normalizedY * 3.4;
-      targetTilt = normalizedX * 2.2;
+      targetX = normalizedX * 5.6;
+      targetY = normalizedY * 3.6;
+      targetTilt = normalizedX * 2.4;
+      targetWorldX = clamp((event.clientX - width / 2) / (width / 2), -1, 1) * 7;
+      targetWorldY = clamp((event.clientY - height / 2) / (height / 2), -1, 1) * 5;
       requestPaint();
     },
     { passive: true }
   );
 
-  document.documentElement.addEventListener("pointerleave", resetGaze);
-  window.addEventListener("blur", resetGaze);
+  document.documentElement.addEventListener("pointerleave", resetMotion);
+  window.addEventListener("blur", resetMotion);
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
-      resetGaze();
+      resetMotion();
     }
   });
 })();
