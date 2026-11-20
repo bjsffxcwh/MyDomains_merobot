@@ -2,21 +2,21 @@
   "use strict";
 
   const robot = document.querySelector(".robot");
-  const robotStage = document.querySelector(".robot-stage");
+  const scene = document.querySelector(".scene");
   const stage = document.querySelector(".stage");
   const stateLabel = document.querySelector("#robot-state");
   const controls = Array.from(document.querySelectorAll("button[data-mood]"));
 
-  if (!robot || !robotStage || !stage || !stateLabel || controls.length === 0) {
+  if (!robot || !scene || !stage || !stateLabel || controls.length === 0) {
     return;
   }
 
   const moods = {
     idle: "IDLE / READY",
-    research: "CURIOUS / RESEARCH",
-    education: "LEARNING / EDUCATION",
-    projects: "BUILDING / PROJECTS",
-    solutions: "SOLVING / SOLUTIONS",
+    research: "CURIOUS / OBSERVING",
+    education: "LEARNING / BUILDING",
+    projects: "MAKING / TESTING",
+    solutions: "SOLVING / TINKERING",
   };
 
   let pinnedMood = null;
@@ -27,7 +27,7 @@
     const mood = hoverMood || pinnedMood || focusMood || "idle";
 
     robot.dataset.mood = mood;
-    robotStage.dataset.mood = mood;
+    scene.dataset.mood = mood;
     stage.dataset.mood = mood;
     stateLabel.textContent = moods[mood];
 
@@ -150,13 +150,13 @@
   window.addEventListener(
     "pointermove",
     (event) => {
-      const bounds = robotStage.getBoundingClientRect();
+      const bounds = scene.getBoundingClientRect();
       if (bounds.width === 0 || bounds.height === 0) {
         return;
       }
 
       const centerX = bounds.left + bounds.width / 2;
-      const centerY = bounds.top + bounds.height * 0.44;
+      const centerY = bounds.top + bounds.height * 0.53;
       const normalizedX = clamp((event.clientX - centerX) / (bounds.width * 0.7), -1, 1);
       const normalizedY = clamp((event.clientY - centerY) / (bounds.height * 0.7), -1, 1);
 
