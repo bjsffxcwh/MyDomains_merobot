@@ -6,6 +6,11 @@ desktop.ini
 # Logs
 *.log
 
+# Local QA and design artifacts — not part of the deployable site
+qa/
+scripts/
+docs/
+
 # Cloudflare local state
 .wrangler/
 node_modules/

@@ -1,0 +1,483 @@
+/* Original MR—01 illustration styles, retained from v6. No perpetual loops. */
+.robot__shadow { fill: #23392b; opacity: .16; }
+.robot .robot-limb {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.robot .shell {
+  fill: url("#shellGrad");
+  stroke: currentColor;
+  stroke-width: 4.5;
+  stroke-linejoin: round;
+}
+
+.robot .neck {
+  fill: #bd8650;
+  stroke: currentColor;
+  stroke-width: 4;
+}
+
+.robot .joint,
+.robot .hand {
+  fill: #bd8650;
+  stroke: currentColor;
+  stroke-width: 3;
+}
+
+.robot .foot {
+  fill: #2c4033;
+  stroke: currentColor;
+  stroke-width: 2.4;
+}
+
+.robot .ear {
+  fill: #bd8650;
+  stroke: currentColor;
+  stroke-width: 3.1;
+}
+
+.robot .ear-dot {
+  fill: #5d3b28;
+}
+
+.robot .visor {
+  fill: #1f3026;
+}
+
+.robot .body-dial {
+  fill: #f7eedb;
+  stroke: currentColor;
+  stroke-width: 3.6;
+}
+
+.robot .body-leaf {
+  fill: none;
+  stroke: #5b7b50;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.robot .rivet {
+  fill: #b08a5e;
+}
+
+.robot .patina {
+  fill: #a95433;
+  opacity: 0.26;
+}
+
+.robot .scratch,
+.robot .body-seam,
+.robot .lens-handle,
+.robot .lens-vein,
+.robot .cap-line,
+.robot .cap-tassel,
+.robot .plane-fold,
+.robot .plane-trail,
+.robot .lantern-cap,
+.robot .lantern-base,
+.robot .lantern-rib,
+.robot .lantern-tassel,
+.robot .lantern-line,
+.robot .bird-tail,
+.robot .bird-wing,
+.robot .bird-foot,
+.robot .plant-stem {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.robot .scratch {
+  stroke: currentColor;
+  stroke-width: 1;
+  opacity: 0.18;
+}
+
+.robot .body-seam {
+  stroke: currentColor;
+  stroke-width: 1.2;
+  opacity: 0.24;
+}
+
+.robot .antenna-stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.robot .antenna-bulb {
+  fill: #bd8650;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.robot .antenna-leaf {
+  fill: #6f8b62;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.robot .antenna {
+  transform-box: view-box;
+  transform-origin: 240px 132px;
+}
+
+.robot[data-mood="education"] .antenna {
+  opacity: 0;
+}
+
+.robot .scarf {
+  fill: #b85635;
+  stroke: currentColor;
+  stroke-width: 2.7;
+  stroke-linejoin: round;
+}
+
+.robot .scarf--two {
+  fill: #9f482d;
+}
+
+.robot .scarf-knot {
+  fill: #d08a54;
+  stroke: currentColor;
+  stroke-width: 2.2;
+}
+
+.scarf-tails {
+  transform-box: view-box;
+  transform-origin: 204px 286px;
+}
+
+.robot .plant {
+  transform-box: view-box;
+  transform-origin: 307px 286px;
+}
+
+.robot .plant-cup {
+  fill: #bd8650;
+  stroke: currentColor;
+  stroke-width: 2.6;
+}
+
+.robot .plant-stem {
+  stroke: #4f6f48;
+  stroke-width: 2.6;
+}
+
+.robot .plant-leaf {
+  fill: #6f8b62;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.robot .plant-leaf--small {
+  fill: #83a06f;
+}
+
+.robot .bird {
+  transform-box: view-box;
+  transform-origin: 118px 392px;
+}
+
+.robot .bird-body,
+.robot .bird-head {
+  fill: #f2e3c3;
+  stroke: currentColor;
+  stroke-width: 2.3;
+}
+
+.robot .bird-tail,
+.robot .bird-wing,
+.robot .bird-foot {
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.robot .bird-beak {
+  fill: #c58a43;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+.robot .bird-eye {
+  fill: #22362b;
+}
+
+/* Faces -------------------------------------------------------------------- */
+
+.robot .face {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.robot[data-face="neutral"] .face--neutral,
+.robot[data-face="curious"] .face--curious,
+.robot[data-face="happy"] .face--happy,
+.robot[data-face="excited"] .face--excited,
+.robot[data-face="wink"] .face--wink,
+.robot[data-face="sleepy"] .face--sleepy {
+  opacity: 1;
+}
+
+.robot .eye {
+  fill: #f4e7cb;
+}
+
+.robot .mouth {
+  fill: none;
+  stroke: #f4e7cb;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}
+
+.robot .happy-eye {
+  fill: none;
+  stroke: #f4e7cb;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}
+
+.robot .brow {
+  fill: none;
+  stroke: #f4e7cb;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+.robot .mouth-o {
+  fill: none;
+  stroke: #f4e7cb;
+  stroke-width: 2.4;
+}
+
+.robot .mouth-fill {
+  fill: #f4e7cb;
+}
+
+.robot .eye-shine {
+  fill: #1f3026;
+  opacity: 0.42;
+}
+
+.robot .visor-gloss {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  opacity: 0.07;
+}
+
+.robot .eye-blink,
+.robot .happy-eye,
+.robot .eye {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Arms --------------------------------------------------------------------- */
+
+.robot .arm--left,
+.robot .arm--right {
+  transform-box: view-box;
+}
+
+.robot .arm--left {
+  transform-origin: 172px 316px;
+}
+
+.robot .arm--right {
+  transform-origin: 308px 316px;
+}
+
+.robot[data-mood="projects"] .arm--right {
+  transform: rotate(-104deg);
+}
+
+.robot[data-mood="projects"] .arm--right .hand {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Accessories -------------------------------------------------------------- */
+
+.robot .acc {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.robot[data-mood="research"] .acc--lens,
+.robot[data-mood="education"] .acc--cap,
+.robot[data-mood="projects"] .acc--plane,
+.robot[data-mood="solutions"] .acc--lantern {
+  opacity: 1;
+}
+
+.robot .lens-float {
+  transform-box: view-box;
+  transform-origin: 368px 180px;
+}
+
+.robot .lens-glass {
+  fill: rgba(251, 243, 225, 0.18);
+  stroke: currentColor;
+  stroke-width: 3;
+}
+
+.robot .lens-handle {
+  stroke: currentColor;
+  stroke-width: 3;
+}
+
+.robot .lens-vein {
+  stroke: currentColor;
+  stroke-width: 1.4;
+  opacity: 0.6;
+}
+
+.robot .lens-leaf {
+  fill: #7f9a6d;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.robot .firefly {
+  fill: #e8c77f;
+  opacity: 0.8;
+}
+
+.robot .acc--cap {
+  transform: translateY(-30px) rotate(-9deg);
+  transform-box: view-box;
+  transform-origin: 240px 112px;
+  transition:
+    transform 0.5s cubic-bezier(0.18, 1.45, 0.38, 1),
+    opacity 0.15s ease;
+}
+
+.robot[data-mood="education"] .acc--cap {
+  opacity: 1;
+  transform: translateY(0) rotate(-3deg);
+}
+
+.robot .cap-top {
+  fill: #1e3329;
+}
+
+.robot .cap-base {
+  fill: #2a3f31;
+}
+
+.robot .cap-line,
+.robot .cap-tassel {
+  stroke: #d2a04a;
+  stroke-width: 2.4;
+}
+
+.robot .cap-button,
+.robot .cap-tassel-end {
+  fill: #d2a04a;
+}
+
+.robot .plane-body {
+  fill: #fbf3e1;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linejoin: round;
+}
+
+.robot .plane-fold {
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.robot .plane-trail {
+  stroke: #d2a04a;
+  stroke-width: 1.6;
+  stroke-dasharray: 5 7;
+  opacity: 0.7;
+}
+
+.robot .plane {
+  transform-box: view-box;
+  transform-origin: 380px 160px;
+}
+
+.robot .lantern-glow {
+  fill: #f2ce7e;
+  opacity: 0.26;
+  filter: blur(8px);
+}
+
+.robot .lantern-body {
+  fill: #e8c37a;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.robot .lantern-cap,
+.robot .lantern-base,
+.robot .lantern-rib {
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.robot .lantern-tassel {
+  stroke: #a95433;
+  stroke-width: 2.2;
+}
+
+.robot .lantern-line {
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+  opacity: 0.55;
+}
+
+.robot .lantern-sway {
+  transform-box: view-box;
+  transform-origin: 372px 136px;
+}
+
+/* Quantized gaze: attributes select authored CSS; JS never writes inline styles.
+   Maximum eye offset 3px, head rotation 1.2deg, with a 48px pointer dead zone. */
+.head-tilt { transform-box: view-box; transform-origin: 240px 282px; }
+.robot[data-gaze^="left"] .head-tilt { transform: rotate(-1.2deg); }
+.robot[data-gaze^="right"] .head-tilt { transform: rotate(1.2deg); }
+.robot[data-gaze^="left"] .eye-track { transform: translateX(-3px); }
+.robot[data-gaze^="right"] .eye-track { transform: translateX(3px); }
+.robot[data-gaze$="up"] .eye-track { translate: 0 -2px; }
+.robot[data-gaze$="down"] .eye-track { translate: 0 2px; }
+html[data-motion="motion"]:not([data-paused]) .head-tilt,
+html[data-motion="motion"]:not([data-paused]) .eye-track { transition: transform .25s ease-out, translate .25s ease-out; }
+@keyframes mr-wave {
+  0%, 100% { transform: rotate(0); }
+  25%, 65% { transform: rotate(-100deg); }
+  45% { transform: rotate(-80deg); }
+}
+@keyframes mr-blink {
+  0%, 100% { transform: scaleY(1); }
+  45%, 60% { transform: scaleY(.08); }
+}
+@keyframes mr-listen {
+  0%, 100% { transform: rotate(0); }
+  45% { transform: rotate(3deg); }
+  70% { transform: rotate(-2deg); }
+}
+html[data-motion="motion"]:not([data-paused]) .robot[data-act="wave"] .arm--right { animation: mr-wave 1.5s ease-in-out both; }
+html[data-motion="motion"]:not([data-paused]) .robot[data-act="blink"] .eye-blink,
+html[data-motion="motion"]:not([data-paused]) .robot[data-act="blink"] .happy-eye { animation: mr-blink .2s ease-in-out; }
+html[data-motion="motion"]:not([data-paused]) .robot[data-act="listen"] .antenna { animation: mr-listen 1.5s ease-in-out; }
+html[data-motion="calm"] .head-tilt,
+html[data-motion="calm"] .eye-track { transform: none; translate: none; }
+html[data-paused] .robot * { animation: none; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .robot * { animation: none !important; transition: none !important; }
+  .head-tilt, .eye-track { transform: none !important; translate: none !important; }
+}
