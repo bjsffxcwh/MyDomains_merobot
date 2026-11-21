@@ -90,7 +90,7 @@ python -m http.server 4173 --bind 127.0.0.1
 npx wrangler pages deploy . --project-name=mydomains-merobot
 ```
 
-> 6.js 使用 data-cfasync="alse" 退出 Cloudflare Rocket Loader，避免脚本被改写类型/延迟执行。不要移除这个属性。_headers、_redirects、404.html 会被 Cloudflare Pages 自动识别。安全响应头包含 CSP；目前已允许 Cloudflare Web Analytics 的脚本与上报域名。新增其他第三方脚本、分析或嵌入内容时，需要同步调整 CSP。若 Cloudflare 的 Email Address Obfuscation 或 Rocket Loader 会向页面注入脚本，上线前请关闭或把对应域名加入 CSP。
+> v6.js 使用 data-cfasync="false" 退出 Cloudflare Rocket Loader，避免脚本被改写类型/延迟执行。不要移除这个属性。
 
 ## 上线前 / 待替换
 
